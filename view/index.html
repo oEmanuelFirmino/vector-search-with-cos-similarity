@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Dados</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="./assets/matrix.ico" type="image/x-icon" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <h1 class="card-title">Entrada de Dados</h1>
+        <form id="saveForm">
+          <div class="form-group">
+            <label for="saveContent">Conteúdo</label>
+            <textarea
+              id="saveContent"
+              name="conteudo"
+              required
+              placeholder="Digite o conteúdo aqui..."
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="saveUrl">URL</label>
+            <input
+              type="url"
+              id="saveUrl"
+              name="url"
+              placeholder="https://exemplo.com"
+            />
+          </div>
+
+          <button type="submit" id="saveButton">Salvar no banco</button>
+        </form>
+        <div id="saveMessage" class="message" style="display: none"></div>
+      </section>
+
+      <section class="card second">
+        <h1 class="card-title">Busca de Dados</h1>
+        <form id="searchForm">
+          <div class="form-group">
+            <label for="searchContent">Conteúdo</label>
+            <textarea
+              id="searchContent"
+              name="conteudo"
+              required
+              placeholder="Digite o conteúdo para busca..."
+            ></textarea>
+          </div>
+
+          <button type="submit" id="searchButton">Obter similares</button>
+        </form>
+        <div id="searchResults" class="search-results"></div>
+        <div id="searchMessage" class="message" style="display: none"></div>
+      </section>
+
+      <section class="card third">
+        <div class="card-header">
+          <h2 class="card-title">Comparação de Similaridade</h2>
+        </div>
+        <div class="chart-container">
+          <canvas id="tensorChart"></canvas>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
